@@ -1,7 +1,0 @@
-{
-  "name": "LiersPoker",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
