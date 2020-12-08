@@ -1,0 +1,5 @@
+ <div class="card-symbols-wrapper">
+    <div *ngFor="let cardSymbolIndex of cardSymbolsIndices;" class="card-symbol-wrapper">
+      <img [src]="'assets/images/cards-symbols/' + cardSymbolIndex + '.jpg'" (click)="symbolClick(cardSymbolIndex)" />
+    </div>
+  </div>

@@ -1,0 +1,17 @@
+.card-symbols-wrapper {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    // margin: 20px;
+}
+
+.card-symbol-wrapper {
+    display: block;
+    text-align: center;
+    margin-left: 0px;
+    margin-bottom: 0%;
+}
+
+.card-symbol-wrapper img{
+    width: 30px;
+    align-content: left;
+}
