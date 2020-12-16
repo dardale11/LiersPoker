@@ -6,12 +6,12 @@ export class Hand {
   type: HandType;
 
   constructor(cards: Card[]) {
-    this.map = new Map();
     this.setHandFromCards(cards);
     this.setHandType();
   }
 
   setHandFromCards(cards: Card[]) {
+    this.map = new Map();
     let cardCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     for (let card of cards) {
       cardCount[card.rank]++;
@@ -60,7 +60,7 @@ export class Hand {
       this.type = HandType.TRIPLET;
       return;
     }
-    if (this.map.has(HandType.PAIR)) {
+    if (this.map.has(HandType.PAIR) && this.map.get(HandType.PAIR).length > 1) {
       this.type = HandType.TWO_PAIRS;
       return;
     }
@@ -126,5 +126,35 @@ export class Hand {
 
     }
     return 0;
+  }
+
+  getNumCards() {
+    let cards = [];
+    this.map.forEach((values, key) => {
+      if (key > -1) {
+        let rounds;
+        switch (key) {
+          case HandType.SINGLE:
+            rounds = 1;
+            break;
+          case HandType.PAIR:
+            rounds = 2;
+            break;
+          case HandType.TRIPLET:
+            rounds = 3;
+            break;
+          case HandType.FOURET:
+            rounds = 4;
+            break;
+        }
+        values = values.sort((a, b) => a - b);
+        values.forEach(val => {
+          for (let index = 0; index < rounds; index++) {
+            cards.push(val);
+          }
+        });
+      }
+    });
+    return cards;
   }
 }

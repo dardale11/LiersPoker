@@ -1,17 +1,42 @@
 .card-symbols-wrapper {
-    display: grid;
-    grid-template-columns: repeat(13, 1fr);
-    // margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(13, 0fr);
+  margin: 2px;
 }
 
 .card-symbol-wrapper {
-    display: block;
-    text-align: center;
-    margin-left: 0px;
-    margin-bottom: 0%;
+  display: block;
+  text-align: center;
+  margin-left: 2px;
+  margin-bottom: 0%;
 }
 
-.card-symbol-wrapper img{
-    width: 30px;
-    align-content: left;
+.card-symbol-wrapper img {
+  width: 30px;
+  align-content: left;
+}
+
+.card-symbols-wrapper button {
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin: 1px 1px;
+  border-radius: 15%;
+}
+
+.button1 {
+  background-color: red;
+}
+
+.button2 {
+  background-color: black;
+}
+.button1:hover {
+  background-color: gold;
+}
+.button2:hover {
+  background-color: gold;
 }
