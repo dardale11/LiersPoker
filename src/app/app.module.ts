@@ -14,6 +14,11 @@ import {
   MatIconModule,
   MatCardModule
 } from '@angular/material';
+import { PlayerService } from './services/player.service';
+import { HttpClient, HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+import { HttpService } from './services/http.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,16 +32,27 @@ import {
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientJsonpModule,
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   exports: [
     MatButtonModule,
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
   ],
-  providers: [],
+  providers: [
+    HttpClient,
+    PlayerService,
+    CookieService,
+    HttpService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

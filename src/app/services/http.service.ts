@@ -41,12 +41,14 @@ export class HttpService {
   private handleError<T>(result?: T) {
     return (error: any): Observable<T> => {
       console.log(error);
+      /*
+      this.spinnerService.hide();
       switch (error.status) {
         case 0:
           if (error.error.currentTarget.readyState === 4) {
-            console.log("Access to resources is denied! Check permissions.");
+            this.logService.error("Access to resources is denied! Check permissions.");
           } else {
-            console.log("Server is unreachable");
+            this.logService.error("Server is unreachable");
           }
 
           break;
@@ -57,21 +59,21 @@ export class HttpService {
           break;
         case 500:
           if (error.error.title == "ConnectionError") {
-            console.log("Server is unreachable");
+            this.logService.error("Server is unreachable");
             break;
           }
         default:
           let strError = (typeof error.error == 'object' ? JSON.stringify(error.error) : error.error);
           if (strError != undefined) {
             if (strError != "{}") {
-              console.log(strError);
+              this.logService.error(strError);
             } else {
-              console.log("Unknown Error");
+              this.logService.error("Unknown Error");
             }
 
           }
           break;
-      }
+      }*/
       return of(result as T);
     };
   }

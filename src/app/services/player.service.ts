@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Hand } from '../models/hand';
-import { HttpService } from './http.service';
+import { HttpClient } from '@angular/common/http';
+import { Tryout } from '../models/tryout';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PlayerService {
-  apiUrl: string;
+  apiUrl: string = "http://localhost:8080/player";
 
-  constructor(private httpService: HttpService) { }
+  constructor(private http: HttpClient) { }
 
-  raiseHand(playerId: number, hand :Hand): Observable<any> {
-    return this.httpService.post<any[]>(this.apiUrl + '/raise/' + playerId, hand);
+  raiseHand(cards : Tryout) {
+    console.log(JSON.stringify(cards))
+    this.http.post(this.apiUrl + "/raise", cards).subscribe(ans => console.log(ans));
   }
 }

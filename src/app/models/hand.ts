@@ -130,6 +130,7 @@ export class Hand {
 
   getNumCards() {
     let cards = [];
+    this.map = new Map([...this.map.entries()].sort());
     this.map.forEach((values, key) => {
       if (key > -1) {
         let rounds;
