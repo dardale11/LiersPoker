@@ -5,8 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChooseCardsComponent } from './components/choose-cards/choose-cards.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
+import { LoginComponent } from './components/login/login.component';
 import {
   MatButtonModule,
   MatMenuModule,
@@ -26,7 +25,8 @@ import { TableComponent } from './components/table/table.component';
   declarations: [
     AppComponent,
     ChooseCardsComponent,
-    TableComponent
+    TableComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -39,11 +39,12 @@ import { TableComponent } from './components/table/table.component';
     MatCardModule,
     MatDialogModule,
     HttpClientJsonpModule,
-    BrowserModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    MatCardModule,
+    FormsModule
   ],
   exports: [
     MatDialogModule,
