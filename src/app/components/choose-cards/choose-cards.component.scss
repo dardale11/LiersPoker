@@ -39,3 +39,18 @@
 .button2:hover {
   background-color: gold;
 }
+.background {
+  background-color: transparent ;
+}
+.serve-button {
+  background-color: white;
+  border-radius: 50%;
+  margin-left: 43%;
+  font-size: larger;
+  color: black;
+}
+
+.serve-button:hover {
+  background-color: black;
+  color: white;
+}

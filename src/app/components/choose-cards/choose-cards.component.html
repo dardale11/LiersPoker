@@ -1,3 +1,4 @@
+<div class="background">
 <div class="card-symbols-wrapper">
   <div *ngFor="let cardSymbolIndex of cardSymbolsIndices; let index = index" class="card-symbol-wrapper">
     <button class="button1" *ngIf="index % 2 == 0" (click)="addCard(cardSymbolIndex)"><label>{{getCardTitle(cardSymbolIndex)}}</label></button>
@@ -7,8 +8,9 @@
 <div class="card-symbols-wrapper">
   <div *ngFor="let card of cards; let index = index" class="card-symbol-wrapper">
     <img [src]="card.img_path" (click)="removeCard(card,index)">
-    <!-- <button class="button1" *ngIf="index % 2 == 0" (click)="removeCard(cardSymbolIndex)"><label>{{getCardTitle(cardSymbolIndex)}}</label></button>
-    <button class="button2" *ngIf="index % 2 != 0" (click)="removeCard(cardSymbolIndex)"><label>{{getCardTitle(cardSymbolIndex)}}</label></button> -->
   </div>
 </div>
-<button (click)="serve()" >Serve</button>
+<button *ngIf="cards.length > 0" class="serve-button" (click)="serve()" >Serve</button>
+
+
+</div>

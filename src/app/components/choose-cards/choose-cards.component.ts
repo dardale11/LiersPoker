@@ -5,7 +5,6 @@ import { Hand } from 'src/app/models/hand';
 import { Deck } from 'src/app/models/deck';
 import { PlayerService } from 'src/app/services/player.service';
 import { Player } from 'src/app/models/player';
-import { Tryout } from 'src/app/models/tryout';
 
 @Component({
   selector: 'app-choose-cards',
@@ -78,17 +77,17 @@ export class ChooseCardsComponent implements OnInit {
   updateCards() {
     this.cards = this.cards.sort((a, b) => a.rank - b.rank);
     this.hand = new Hand(this.cards);
-    let pokerRankedNums = this.hand.getNumCards();
-    let tempCards: Card[] = [];
-    for (let index of pokerRankedNums) {
-      let card = this.cards.find( card => card.rank == index);
-      if (card) {
-        tempCards.push(card);
-        const index = this.cards.indexOf(card, 0);
-        this.cards.splice(index, 1);
-      }
-    }
-    this.cards = tempCards;
+    // let pokerRankedNums = this.hand.getNumCards();
+    // let tempCards: Card[] = [];
+    // for (let index of pokerRankedNums) {
+    //   let card = this.cards.find( card => card.rank == index);
+    //   if (card) {
+    //     tempCards.push(card);
+    //     const index = this.cards.indexOf(card, 0);
+    //     this.cards.splice(index, 1);
+    //   }
+    // }
+    // this.cards = tempCards;
     // console.log(this.hand.type)
 
   }
@@ -99,8 +98,6 @@ export class ChooseCardsComponent implements OnInit {
       return;
     }
     console.log(this.cards);
-    let tryout: Tryout = new Tryout();
-    tryout.cards = this.cards;
-    this.playerService.raiseHand(tryout);
+    this.playerService.raiseHand(this.hand);
   }
 }

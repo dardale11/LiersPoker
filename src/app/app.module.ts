@@ -12,17 +12,21 @@ import {
   MatMenuModule,
   MatToolbarModule,
   MatIconModule,
-  MatCardModule
+  MatCardModule,
+  MatDialog,
+  MatDialogModule
 } from '@angular/material';
 import { PlayerService } from './services/player.service';
 import { HttpClient, HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpService } from './services/http.service';
+import { TableComponent } from './components/table/table.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ChooseCardsComponent
+    ChooseCardsComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +37,7 @@ import { HttpService } from './services/http.service';
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
+    MatDialogModule,
     HttpClientJsonpModule,
     BrowserModule,
     HttpClientModule,
@@ -41,6 +46,7 @@ import { HttpService } from './services/http.service';
     BrowserAnimationsModule,
   ],
   exports: [
+    MatDialogModule,
     MatButtonModule,
     MatMenuModule,
     MatToolbarModule,
@@ -53,6 +59,7 @@ import { HttpService } from './services/http.service';
     CookieService,
     HttpService
   ],
+  entryComponents: [ ChooseCardsComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

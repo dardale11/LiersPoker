@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Tryout } from '../models/tryout';
+import { Hand } from '../models/hand';
 
 @Injectable()
 export class PlayerService {
@@ -8,8 +9,7 @@ export class PlayerService {
 
   constructor(private http: HttpClient) { }
 
-  raiseHand(cards : Tryout) {
-    console.log(JSON.stringify(cards))
-    this.http.post(this.apiUrl + "/raise", cards).subscribe(ans => console.log(ans));
+  raiseHand(hand: Hand) {
+    this.http.post(this.apiUrl + "/raise", JSON.stringify(hand)).subscribe(ans => console.log(ans));
   }
 }
