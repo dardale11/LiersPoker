@@ -21,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpService } from './services/http.service';
 import { TableComponent } from './components/table/table.component';
+import {LoginService} from "./services/login.service";
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +59,8 @@ import { TableComponent } from './components/table/table.component';
     HttpClient,
     PlayerService,
     CookieService,
-    HttpService
+    HttpService,
+    LoginService
   ],
   entryComponents: [ ChooseCardsComponent ],
   bootstrap: [AppComponent]
