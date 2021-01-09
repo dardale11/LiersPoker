@@ -1,4 +1,12 @@
-<input type="text" [(ngModel)]="loginName" placeholder="User name"  />
-<input type="number" [(ngModel)]="roomNumber" placeholder="Room Number"  />
-
-<button (click)="onClickLogin()">Login</button>
+<div id="outDiv">
+  <div>
+    <input type="text" [(ngModel)]="loginName" placeholder="Insert Username"/>
+  </div>
+  <div>
+    <label>Choose Room Number: </label>
+    <input  type="number" id="vol" name="vol" min="0" max="9999"  value="0"[(ngModel)]="roomNumber"/>
+  </div>
+  <div>
+    <button id="loginButton"(click)="onClickLogin()">Login</button>
+  </div>
+</div>

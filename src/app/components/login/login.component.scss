@@ -1,0 +1,29 @@
+input {
+  font-family: verdana;
+  font-size: 20px;
+  text-align:center
+}
+div {
+  width: 100vw;
+  position: relative;
+  margin-bottom: 3% ;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+#outDiv{
+  margin-top:3%;
+}
+
+#loginButton{
+  background-color: #f6fa00;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  color: black;
+  border: 2px solid black;
+
+}
+
